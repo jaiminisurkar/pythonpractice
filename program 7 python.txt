@@ -1,0 +1,91 @@
+program :7
+lucky1 ='king of clubs'
+lucky2 ='queen of diamonds' 
+lucky3 = 'ace of spades'
+lucky4 = '10 of hearts'
+
+
+card = input("Enter your card:")
+
+new_card=card.split()
+# print(card)
+# print(new_card)
+# print(new_card[0])
+# print(new_card[2])
+
+if(new_card[0]=='king' and new_card[2]=='clubs' or new_card[0]=='queen' and new_card[2]=='diamonds' or new_card[0]=='ace' and new_card[2]=='spades' or new_card[0]=='10' and new_card[2]=='hearts'):
+    print("*********************************************************************")
+    print("You choose lucky card")
+    print("*********************************************************************")
+else:
+    print("*********************************************************************")
+    print('You choose not lucky card')
+    print("*********************************************************************")
+
+
+pro 10
+no=int(input("Enter Any Number:"))
+print(no,end=" ")
+while(no!=1):
+    if(no%2==0):
+        no=int(no/2)
+        print(no,end=" ")
+    else:
+        no=(no*3)+1
+        print(no,end=" ")
+
+
+program 11
+num = int(input("Enter any number:"))
+# print((num//2)+1)
+
+if num > 1:
+
+    for i in range(2, (num//2)+1):
+        if (num % i) == 0:
+            print("*********************************************************************")
+            print(num, "is not a prime number")
+            print("*********************************************************************")
+            break
+    else:
+        print("*********************************************************************")
+        print(num, "is a prime number")
+        print("*********************************************************************")
+else:
+    print("*********************************************************************")
+    print(num, "is not a prime number")
+    print("*********************************************************************")
+
+
+program 12
+birthDates = {'ramesh':'10/02/05','keval':'06/12/03','hiten':'25/08/03','bhargav':'01/01/01','jayesh':'12/12/12'}
+
+months = {'01':'January','02':'February','03':'March','04':'April','05':'May','06':'June','07':'July','08':'August','09':'September','10':'October','11':'November','12':'December'}
+
+print("*********************************************************************")
+for name,date in birthDates.items():
+    # print(name,date)
+    getMonth = date.split('/')
+
+    if getMonth[1] in months:
+        print(name,":",months.get(getMonth[1]))
+
+print("*********************************************************************")
+
+
+
+
+program 13
+price = int(input('Enter your Price: '))
+deno1, deno2, deno3 = map(int, input('Denominations: ').split())
+print("Can you form", price, "exactly using", deno1, deno2, deno3, "?")
+for d1 in range(0, 1 + price // deno1):
+    for d2 in range(0, 1 + price // deno2):
+        for d3 in range(0, 1 + price // deno3):
+            if d1 * deno1 + d2 * deno2 + d3 * deno3 == price:
+                print(d1, d2, d3)
+else:
+    print('No') 
+ 
+ 
+ 

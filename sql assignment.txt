@@ -1,0 +1,42 @@
+2.SELECT pname,pno,color
+FROM p 
+WHERE color='red';
+
+
+1.SELECT *                        
+FROM p 
+WHERE p_city='london';    
+
+
+3.SELECT pname,weight
+FROM p 
+WHERE weight=(SELECT MAX(weight)FROM p);
+
+
+4.SELECT pno,pname,weight 
+FROM p
+WHERE weight<(SELECT MAX(weight)FROM p)ORDER BY weight DESC LIMIT 1;
+
+
+5.SELECT DISTINCT s.sname,s.s_city
+FROM s,sp
+WHERE sp.sno=s.sno AND sp.qty>200;
+
+
+assignment :- 3
+
+6.SELECT sp.qty,p.weight 
+FROM sp JOIN p ON sp.pno=p.pno 
+WHERE weight=(SELECT MAX(weight)FROM p);
+
+
+7.SELECT DISTINCT s.sname,sp.qty 
+FROM s,p,sp
+WHERE sp.pno=p.pno AND p.color="red"GROUP BY sname;
+
+
+8.SELECT DISTINCT s.sname,s.s_status,p.p_city,sp.qty 
+FROM s,p,sp 
+WHERE sp.pno=p.pno AND sp.sno=s.sno AND s.s_status<30 GROUP BY sname;
+
+9.SELECT sno,sum(qty) from sp GROUP by sno;

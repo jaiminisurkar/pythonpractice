@@ -1,0 +1,3 @@
+SELECT pname,pno,color
+FROM p 
+WHERE color='red';
